@@ -68,6 +68,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "personal_website_api.wsgi.application"
 
+SECRET_KEY = os.environ["SECRET_KEY"]
+
 if DEBUG:
     DATABASES = {
         "default": {
@@ -76,9 +78,7 @@ if DEBUG:
         }
     }
     ALLOWED_HOSTS = []
-    SECRET_KEY = "41-dauqqd27w7u1a_ak-6p@tq0ai$*c%29pe#6hkbb8o*j$*0g"
 else:
-    SECRET_KEY = os.environ["SECRET_KEY"]
     ALLOWED_HOSTS = ["bold-moon-5946.fly.dev"]
     DATABASES = {"default": dj_database_url.config(default=os.environ["DATABASE_URL"])}
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
