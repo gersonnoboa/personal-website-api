@@ -29,6 +29,9 @@ class Concert(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(default=None, blank=True, null=True)
 
+    class Meta:
+        ordering = ["-start_date"]
+
     def __str__(self) -> str:
         return f"Venue: {self.venue}, on date: {self.start_date}"
 
