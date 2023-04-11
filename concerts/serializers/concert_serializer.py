@@ -31,4 +31,4 @@ class ConcertSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Concert
-		fields = ['start_date', 'end_date', 'name', 'venue', 'act_set']
+		fields = ['id', 'start_date', 'end_date', 'name', 'venue', 'act_set']
