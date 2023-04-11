@@ -15,7 +15,7 @@ class VenueSerializer(serializers.ModelSerializer):
 class ArtistSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Artist
-		fields = ['name', 'id']
+		fields = ['name', 'id', 'image_url']
 
 class ActSerializer(serializers.ModelSerializer):
 	artist = ArtistSerializer()
